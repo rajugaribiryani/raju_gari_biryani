@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ... (Keep all your existing color variables exactly the same) ... */
+    /* Royal Gold Palette */
+    --gold: 45 72% 52%;
+    --gold-light: 45 80% 65%;
+    --gold-dark: 38 60% 40%;
+    
+    /* Cream/Warm Backgrounds */
+    --background: 40 33% 98%;
+    --foreground: 20 14% 15%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 20 14% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 15%;
+
+    /* Primary = Gold */
+    --primary: 45 72% 52%;
+    --primary-foreground: 20 14% 10%;
+
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 20 14% 20%;
+
+    --muted: 35 20% 94%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 38 60% 40%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 90%;
+    --ring: 45 72% 52%;
+
+    --radius: 0.5rem;
+
+    /* Dark charcoal for footer */
+    --dark: 20 14% 12%;
+    --dark-foreground: 40 20% 90%;
+
+    /* Burgundy accent */
+    --burgundy: 350 45% 25%;
+    --burgundy-foreground: 40 33% 98%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* ... (Keep dark mode variables same) ... */
+    --background: 20 14% 8%;
+    --foreground: 40 20% 95%;
+    --card: 20 14% 10%;
+    --card-foreground: 40 20% 95%;
+    --popover: 20 14% 10%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 45 72% 52%;
+    --primary-foreground: 20 14% 10%;
+    --secondary: 20 14% 15%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 20 14% 18%;
+    --muted-foreground: 35 15% 60%;
+    --accent: 45 60% 45%;
+    --accent-foreground: 20 14% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 20 14% 20%;
+    --input: 20 14% 20%;
+    --ring: 45 72% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box; /* Vital for preventing padding from increasing width */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevents scroll on html level */
+    max-width: 100vw;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden; /* Prevents scroll on body level */
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* ... (Keep your existing component classes) ... */
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg border-b border-border/50;
+  }
+
+  .btn-gold {
+    @apply bg-accent text-accent-foreground hover:bg-gold-dark transition-colors duration-300 font-medium;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+  }
+
+  .card-menu {
+    @apply bg-card rounded-2xl shadow-card hover:shadow-elevated transition-shadow duration-500;
+  }
+
+  /* UPDATED: Added w-full and box-border to prevent overflow */
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 w-full max-w-full box-border;
+  }
+
+  /* UPDATED: Added w-full */
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4;
+  }
+
+  .ornament {
+    @apply text-primary opacity-80;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsla(20, 14%, 12%, 0.6) 0%,
+      hsla(20, 14%, 12%, 0.4) 50%,
+      hsla(20, 14%, 12%, 0.7) 100%
+    );
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-dark via-primary to-gold-light;
+  }
+
+  .gold-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-primary to-gold-light;
+  }
+
+  .gold-border {
+    @apply border border-primary/30;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.3);
+  }
+
+  .menu-card-hover {
+    @apply transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  /* ... (Keep your utilities as is) ... */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--primary)) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .price-text {
+    @apply text-foreground;
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+  }
+
+  .whatsapp-ripple {
+    animation: ripple 2s ease-out infinite;
+    background: hsl(142 70% 50% / 0.4);
+  }
+
+  .animation-delay-1 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-2 {
+    animation-delay: 1.2s;
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+    }
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
