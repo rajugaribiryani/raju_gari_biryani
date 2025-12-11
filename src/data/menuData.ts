@@ -80,6 +80,17 @@ export const menuItems: MenuItem[] = [
   // --- Meals ---
   { id: 53, name: "Veg Meals", price: 5.99, category: "Meals", image: "/images/vegmeals.png" },
   { id: 54, name: "Non Veg Meals", price: 9.99, category: "Meals", image: "/images/nonvegmeals.png" },
+
+  // --- Tiffins (NEW SECTION) ---
+  { id: 55, name: "Idly", price: 4.99, category: "Tiffins", image: "/images/idli.jpg" },
+  { id: 56, name: "Dosa", price: 5.99, category: "Tiffins", image: "/images/dosa.jpg" },
+  { id: 57, name: "Vada", price: 5.99, category: "Tiffins", image: "/images/vada.webp" },
+  { id: 58, name: "Mysore Bonda", price: 5.99, category: "Tiffins", image: "/images/mysore bonda.jpg" },
+  { id: 59, name: "Chapathi", price: 4.99, category: "Tiffins", image: "/images/chapathi.jpg" },
+  { id: 60, name: "Puri", price: 4.99, category: "Tiffins", image: "/images/poori.jpg" },
+  { id: 61, name: "Uthappam", price: 4.99, category: "Tiffins", image: "/images/uthappam.jpg" },
+  { id: 62, name: "Lemon Rice", price: 4.99, category: "Tiffins", image: "/images/lemonrice.jpg" },
+  { id: 63, name: "Combo Breakfast", price: 9.99, category: "Tiffins", image: "/images/combo_tiffin.jpg" },
 ];
 
 export const categories = [
@@ -92,6 +103,7 @@ export const categories = [
   "Fried Rice & Noodles",
   "Pakodis",
   "Sweets",
+  "Tiffins",
   "Meals"
 ];
 
